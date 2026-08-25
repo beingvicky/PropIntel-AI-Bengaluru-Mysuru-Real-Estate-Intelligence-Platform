@@ -1,0 +1,25 @@
+property_id,city,locality,micro_market,property_type,bhk,super_builtup_sqft,price_inr,monthly_rent_inr,launch_year,age_years,rera_registered,title_clearance,legal_dispute_flag,flood_risk_score,connectivity_score,social_infra_score,days_on_market,transaction_intent,seller_type,historical_appreciation_3y_pct
+BLR-001,Bengaluru,Whitefield,East Bengaluru,Apartment,2,1180,9800000,36000,2022,3,1,1,0,35,88,85,42,Resale,Developer,28.4
+BLR-002,Bengaluru,Sarjapur Road,Southeast Bengaluru,Apartment,3,1520,13200000,45000,2021,4,1,1,0,30,84,81,49,Resale,Developer,24.8
+BLR-003,Bengaluru,Electronic City,South Bengaluru,Apartment,2,1050,7600000,29500,2020,5,1,1,0,28,82,74,37,Resale,Owner,22.7
+BLR-004,Bengaluru,Hebbal,North Bengaluru,Apartment,3,1680,17800000,58000,2023,2,1,1,0,22,90,86,55,Primary,Developer,27.9
+BLR-005,Bengaluru,JP Nagar,South Bengaluru,Villa,4,2450,26500000,78000,2019,6,1,1,0,40,79,83,68,Resale,Owner,19.1
+BLR-006,Bengaluru,Yelahanka,North Bengaluru,Apartment,2,1140,8200000,30000,2021,4,1,1,0,25,80,78,44,Resale,Developer,21.5
+BLR-007,Bengaluru,Indiranagar,Central Bengaluru,Apartment,3,1600,24500000,85000,2018,7,1,1,0,18,92,91,61,Resale,Owner,17.4
+BLR-008,Bengaluru,Bannerghatta Road,South Bengaluru,Apartment,2,1125,8900000,31500,2022,3,1,1,0,38,81,79,46,Resale,Developer,20.6
+BLR-009,Bengaluru,Kanakapura Road,South Bengaluru,Apartment,3,1450,11800000,41000,2020,5,1,1,0,48,77,80,58,Resale,Owner,18.9
+BLR-010,Bengaluru,Hennur,North Bengaluru,Apartment,2,1210,9400000,34000,2023,2,1,1,0,26,83,82,40,Primary,Developer,26.8
+BLR-011,Bengaluru,RR Nagar,West Bengaluru,Apartment,3,1500,10900000,39500,2019,6,1,1,0,46,75,76,63,Resale,Owner,16.2
+BLR-012,Bengaluru,Devanahalli,North Bengaluru,Plot,0,2400,6800000,12000,2024,1,1,1,0,20,70,65,72,Primary,Developer,31.2
+MYS-001,Mysuru,Vijayanagar,West Mysuru,Apartment,2,1090,6400000,21000,2021,4,1,1,0,25,78,80,39,Resale,Owner,18.4
+MYS-002,Mysuru,Gokulam,Central Mysuru,Apartment,3,1480,9200000,28500,2020,5,1,1,0,22,82,84,45,Resale,Owner,20.1
+MYS-003,Mysuru,Hebbal,Mysuru North,Apartment,2,1160,7000000,22000,2022,3,1,1,0,27,76,75,41,Primary,Developer,19.8
+MYS-004,Mysuru,Nazarbad,Central Mysuru,Independent House,3,1820,12600000,32000,2018,7,1,1,0,35,79,86,59,Resale,Owner,14.9
+MYS-005,Mysuru,Bogadi,West Mysuru,Villa,4,2380,16800000,40000,2019,6,1,1,0,30,72,77,64,Resale,Owner,15.8
+MYS-006,Mysuru,KC Layout,South Mysuru,Apartment,2,1025,5900000,19500,2023,2,1,1,0,24,74,73,36,Primary,Developer,21.2
+MYS-007,Mysuru,Yadavagiri,North Mysuru,Apartment,3,1540,9800000,30000,2021,4,1,1,0,18,81,88,52,Resale,Owner,22.4
+MYS-008,Mysuru,Hootagalli,Industrial Corridor,Plot,0,2200,5200000,9000,2024,1,1,1,0,21,68,66,70,Primary,Developer,24.7
+MYS-009,Mysuru,Kuvempunagar,South Mysuru,Apartment,2,1080,6750000,21500,2022,3,1,1,0,26,77,82,43,Resale,Owner,20.5
+MYS-010,Mysuru,Siddhartha Layout,East Mysuru,Apartment,3,1460,9100000,28250,2020,5,1,1,0,23,80,83,47,Resale,Owner,19.3
+MYS-011,Mysuru,Lakshmipuram,Central Mysuru,Apartment,2,980,6100000,20500,2019,6,1,0,1,34,83,87,66,Resale,Owner,13.7
+MYS-012,Mysuru,JP Nagar,Mysuru South,Apartment,2,1110,6600000,21200,2021,4,1,1,0,29,75,76,50,Resale,Owner,18.9
