@@ -1,7 +1,7 @@
 import math
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 
@@ -200,8 +200,8 @@ class PropIntelOrchestrator:
         self.risk_watch = RiskWatchAgent()
         self.investment_advisor = InvestmentAdvisorAgent()
 
-    def run(self, filters: PropIntelFilters) -> Dict[str, object]:
-        inventory = self.data_agent.load()
+    def run(self, filters: PropIntelFilters, inventory: Optional[pd.DataFrame] = None) -> Dict[str, object]:
+        inventory = inventory.copy() if inventory is not None else self.data_agent.load()
         filtered, locality_table = self.locality_scout.run(inventory, filters)
         market_summary = self.market_pulse.run(filtered)
         risk_summary = self.risk_watch.run(filtered)

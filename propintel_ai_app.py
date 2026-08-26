@@ -11,6 +11,11 @@ APP_TITLE = "PropIntel AI - Bengaluru & Mysuru Real Estate Intelligence Platform
 DATA_PATH = Path(__file__).parent / "data" / "bengaluru_mysuru_inventory.csv"
 
 
+@st.cache_data(show_spinner=False)
+def load_inventory(data_path: str) -> pd.DataFrame:
+    return PropIntelOrchestrator(Path(data_path)).data_agent.load()
+
+
 def _fmt_inr_lakh(value: float) -> str:
     return f"{value:,.1f} L"
 
@@ -45,11 +50,13 @@ def render_sidebar(inventory: pd.DataFrame) -> PropIntelFilters:
 
     property_types = st.sidebar.multiselect("Property Types", all_types, default=all_types)
 
+    min_bhk = int(inventory["bhk"].min())
+    max_bhk = int(inventory["bhk"].max())
     bhk_range = st.sidebar.slider(
         "BHK Range",
-        min_value=0,
-        max_value=int(inventory["bhk"].max()),
-        value=(1, int(inventory["bhk"].max())),
+        min_value=min_bhk,
+        max_value=max_bhk,
+        value=(min_bhk, max_bhk),
     )
 
     min_yield = st.sidebar.slider(
@@ -185,8 +192,11 @@ def main() -> None:
     st.title(APP_TITLE)
     st.caption("Multi-agent intelligence for buy, hold, and rental decisions in Bengaluru and Mysuru")
 
-    orchestrator = PropIntelOrchestrator(DATA_PATH)
-    inventory = orchestrator.data_agent.load()
+    try:
+        inventory = load_inventory(str(DATA_PATH))
+    except (FileNotFoundError, ValueError, pd.errors.ParserError) as exc:
+        st.error(f"PropIntel could not load the bundled market inventory: {exc}")
+        return
 
     filters = render_sidebar(inventory)
 
@@ -198,18 +208,15 @@ def main() -> None:
         st.warning("Select at least one property type to run analysis.")
         return
 
-    run_clicked = st.button("Run PropIntel Analysis", type="primary", use_container_width=True)
-
-    if not run_clicked:
-        st.info("Set your filters and click Run PropIntel Analysis.")
-        return
-
-    result = orchestrator.run(filters)
+    orchestrator = PropIntelOrchestrator(DATA_PATH)
+    result = orchestrator.run(filters, inventory=inventory)
     filtered = result["filtered"]
 
     if filtered.empty:
         st.error("No listings matched your current filters. Broaden budget, BHK, or yield settings.")
         return
+
+    st.caption(f"Showing {filtered.shape[0]} of {inventory.shape[0]} listings for the selected filters.")
 
     render_kpis(filtered, result["risk_summary"])
     render_market_cards(result["market_summary"])
