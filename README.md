@@ -54,16 +54,36 @@ cd PropIntel-AI-Bengaluru-Mysuru-Real-Estate-Intelligence-Platform
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Start the app:
 
 ```bash
-streamlit run propintel_ai_app.py
+python -m streamlit run propintel_ai_app.py
 ```
 
 No external API key is required for the PropIntel app because it uses the included dataset at `data/bengaluru_mysuru_inventory.csv`.
+
+## Development Checks
+
+Install the test dependency:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
+Run the regression suite:
+
+```bash
+python -m pytest -q
+```
+
+Optional prototype scripts that use Agno, Firecrawl, OpenAI, or local Ollama models have their own dependency file:
+
+```bash
+python -m pip install -r requirements-ai.txt
+```
 
 ## Project Structure
 
@@ -75,10 +95,23 @@ No external API key is required for the PropIntel app because it uses the includ
 |   `-- bengaluru_mysuru_inventory.csv
 |-- assets/
 |   `-- propintel-live-demo.png
+|-- tests/
+|   `-- test_propintel_engine.py
+|-- .streamlit/
+|   `-- config.toml
+|-- requirements-ai.txt
+|-- requirements-dev.txt
 |-- requirements.txt
 `-- README.md
 ```
 
 ## Deployment
 
-The app is deployed on Streamlit Community Cloud. Push changes to `main` and Streamlit will auto-redeploy from the connected GitHub repository.
+The app is deployed on Streamlit Community Cloud.
+
+- Entrypoint: `propintel_ai_app.py`
+- Runtime dependencies: `requirements.txt`
+- Python version: select the same Python version used for local testing in Streamlit Cloud advanced settings
+- Secrets: none required for the dashboard app
+
+Push changes to `main` and Streamlit will auto-redeploy from the connected GitHub repository. If the app was created with the wrong Python version, delete and redeploy it with the corrected advanced setting.
