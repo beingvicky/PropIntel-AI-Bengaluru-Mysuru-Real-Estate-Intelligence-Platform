@@ -10,6 +10,7 @@ env/
 
 # Streamlit and local runtime
 .streamlit/secrets.toml
+.streamlit/config.toml
 
 # Environment files
 .env
