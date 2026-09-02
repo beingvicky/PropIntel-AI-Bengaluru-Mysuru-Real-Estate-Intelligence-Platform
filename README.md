@@ -19,7 +19,7 @@ PropIntel AI helps compare real estate opportunities across Bengaluru and Mysuru
 - KPI summary for matching listings, median price, median rental yield, and risk exposure
 - City-level market pulse for Bengaluru and Mysuru
 - Interactive Plotly charts for yield, price, and locality appreciation
-- Ranked property recommendations with PropIntel scoring bands.
+- Ranked property recommendations with PropIntel scoring bands
 - Locality intelligence table for comparing micro-markets.
 - Filtered raw listings view for detailed inspection.
 
